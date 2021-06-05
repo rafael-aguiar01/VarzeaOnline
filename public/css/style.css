@@ -1,0 +1,70 @@
+/* A paleta escolhida para esse projeto foi a https://coolors.co/d8f3dc-b7e4c7-95d5b2-74c69d-52b788-40916c-2d6a4f-1b4332-081c15 */
+
+/* *{
+    box-shadow: inset 0px 0px 10px 1px red
+   
+} */
+body {
+    /* background-color: #d8f3dc; */
+    margin: 0px;
+    padding: 0px;
+}
+h5{
+    text-align: justify;
+}
+hr {
+    color: #081C15;
+    border: 2px solid;
+    opacity: unset;
+}
+img{
+    border: none;
+}
+a:link, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color: #40916C;
+}
+
+.textblue{
+    color: #081c15;
+}
+
+.bg-navbar{
+    background-color: #D8F3DC;
+}
+
+.bg-noticia {
+    background-color: white;
+}
+
+.destaque {
+    background-color: #081c15;
+}
+
+.border-card {
+    background-color: #081c15;
+}
+
+.mr-zero {
+    margin-right: 0px;
+}
+
+.pr-vinte{
+    padding-left: 20px;
+}
+
+.txt-white{
+    color: white;
+}
+
+.footer{
+    height: 100px;
+}
+
+.pa-tres{
+    padding-left:  20px;
+    padding-right:  20px;
+}

@@ -1,0 +1,47 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>  
+
+<body>
+  <%- include ('partials/bannerPrincipal.ejs') %> 
+  <div class="container">
+    <hr>
+    <div class="card">
+        <div class="card-header bg-noticia" ">
+            <h2><%= noticia.title %> </h2>
+            <div style="height: auto";><img src="<%= noticia.image_url %>" class="img-fluid rounded mx-auto d-block" alt="..."></div>
+        </div>
+        <div class="card-body">
+            <h5><%= noticia.caption %> </h5> 
+            <%- noticia.body  %> 
+        </div>
+    </div>
+</div>
+<div class="container mt-2" ><h5 class="textblue">Leitura recomendada para você</h5></div>
+<div class="container mt-2">
+        <% noticias.forEach(noticias => { %> 
+            <div class="card mb-1" >
+            <a href="/<%= noticias.slug %>">
+              <div class="row g-0">
+                <div class="card col-md-2" >
+                  <img src="<%= noticias.image_url %> " alt="..." height="180px">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= noticias.title %> </h5>
+                    <p class="card-text"><%= noticias.caption %> </p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </a>
+           </div>
+        <%  }) %> 
+    </div>
+  
+
+</div>
+
+
+</body>
+
+<%- include ('partials/footer.ejs') %> 

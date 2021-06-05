@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+  <title>Várzea Online</title>
+</head>
+<%- include ('../partials/navbar.ejs') %>  
+
+<body>
+  <%- include ('../partials/bannerPrincipal.ejs') %> 
+  
+  <% result.news.rows.forEach(noticia => { %> 
+  <div class="card mb-1" >
+  <a href="/<%= noticia.slug %>">
+    <div class="row g-0">
+      <div class="card col-md-2" >
+        <img src="<%= noticia.image_url %> " alt="..." height="175px">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= noticia.title %> </h5>
+          <p class="card-text"><%= noticia.caption %> </p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </a>
+  </div>
+  <%  }) %>
+  <div class="row">
+    <div class="col col-12">
+      
+        <% if(result.page >2 ){  %> 
+            <a style="float: left" href="/category/<%= slug %> /<%= result.page -1 %> "> <<< Voltar</a>
+        <%} else if(result.page ==2){ %> 
+            <a style="float: left" href="/category/<%= slug %> "> <<< Voltar</a>
+        <% } %> 
+        
+        <% if(result.next) {%> 
+            <a style="float: right" href="/articles/page/<%= result.page +1 %>">Avançar >>></a>
+        <% } %> 
+    </div>
+    
+    <hr>
+</div>
+
+</body>
+
+<%- include ('../partials/footer.ejs') %> 
+

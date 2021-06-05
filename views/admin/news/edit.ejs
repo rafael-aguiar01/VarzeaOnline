@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+  <title>Várzea Online</title>
+</head>
+<%- include ('../../partials/navbarAdmin.ejs') %>  
+
+<div class="container">
+    <hr>
+    <div class="card">
+        <div class="card-header">
+            <h2>Editar Notícia</h2>
+        </div>
+        <div class="card-body">
+            
+            <form method="POST" action="/news/update">
+                <input type="hidden" value="<%= noticia.id %>" name="id">
+                <input class="form-control" type="text" name="title" placeholder="Título da Notícia" value="<%- noticia.title %>">
+                <input class="form-control mt-2 mb-2" type="text" name="caption" placeholder="Sub-título da notícia" value="<%- noticia.caption %>">
+                <textarea class="form-control" placeholder="Escreva a notícia aqui" name="body" id="noticia" ></textarea>
+                <input class="form-control mt-2" type="text" name="image_url" placeholder="Url Imagem da notícia" value="<%- noticia.image_url %>">
+                <input class="form-control mt-2" type="text" name="author" placeholder="Autor" value="<%- noticia.author %>">
+                <input class="form-control mt-2" type="text" name="views" placeholder="Views" value="<%- noticia.views %>">
+                <label class="mt-2">Categoria</label>
+                <select name="category" class="form-control">
+                    <% categories.forEach((category) => { %>
+                        <% if(category.id === noticia.categoryId) { %> 
+                            <option value="<%= category.id %>" selected><%= category.title %></option>
+                        <% } else { %> 
+                            <option value="<%= category.id %>"><%= category.title %></option>
+                        <% } %> 
+                    <% }) %> 
+                </select>
+                <button class = "btn btn-success mt-2">Atualizar</button>
+                <button href="/admin/news" class = "btn btn-danger mt-2">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="content" style="display: none;">
+    <%- noticia.body %>
+</div>
+
+<%- include ('../../partials/footer.ejs') %>
+
+<script src="/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        language: 'pt_BR',
+        selector: "#noticia",
+        plugins: [
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+        ],
+        init_instance_callback: () =>{
+            tinymce.get("noticia").setContent($("#content").html())
+        }
+    })
+</script>

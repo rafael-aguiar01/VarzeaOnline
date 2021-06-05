@@ -1,0 +1,255 @@
+<%- include ('partials/header.ejs') %>
+  <%- include ('partials/navbar.ejs') %>
+
+    <body>
+      <%- include ('partials/bannerPrincipal.ejs') %>
+      
+        <div class="card mb-3 text-white destaque border-white">
+          <div class="row g-0">
+              <div class="card col-md-4 border-0">
+                <img
+                  src="<%= news[0].image_url %>"
+                  alt="...">
+              </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h6 style="background-color: rgb(189, 22, 22); color: black; display: inline-block;">DESTAQUE</h6>
+                <a href="/<%= news[0].slug %>"><h5 class="card-title"><%= news[0].title %></h5></a>
+                <a href="/<%= news[0].slug %>"><p class="card-text"><%= news[0].caption %></p></a>
+                <p class="card-text"> <small class="txt-white"> <%  timeRead = Math.ceil(news[0].body.split(' ').length / 150)  %> 
+                  Tempo de Leitura: <%=timeRead %> min </small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4 mr-zero">
+          <div class="col p-0">
+            <a href="/<%= news[1].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[1].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[1].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[1].body.split(' ').length / 150)  %> 
+                   Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="col p-0">
+            <a href="/<%= news[2].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[2].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[2].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[2].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col p-0">
+            <a href="/<%= news[3].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[3].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[3].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[3].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col p-0">
+            <a href="/<%= news[4].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[4].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[4].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[4].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="container mt-2 mb-2">
+          <a href="https://go.hotmart.com/E53105110N"><img src="https://i.ibb.co/Dwp22KZ/propaganda1.jpg"
+              class="card-img" alt="..." height="90px"></a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4 mr-zero">
+          <div class="col p-0">
+            <a href="/<%= news[5].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[5].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[5].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[5].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="col p-0">
+            <a href="/<%= news[6].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[6].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[6].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[6].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col p-0">
+            <a href="/<%= news[7].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[7].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[7].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[7].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col p-0">
+            <a href="/<%= news[8].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[8].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[8].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[8].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="container mt-2 mb-2">
+          <a href="https://go.hotmart.com/E53105110N"><img src="https://i.ibb.co/Dwp22KZ/propaganda1.jpg"
+              class="card-img" alt="..." height="90px"></a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4 mr-zero">
+          <div class="col p-0">
+            <a href="/<%= news[9].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[9].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[9].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[9].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="col p-0">
+            <a href="/<%= news[10].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[10].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[10].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[10].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col p-0">
+            <a href="/<%= news[11].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[11].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[11].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[11].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col p-0">
+            <a href="/<%= news[12].slug %>">
+              <div class="card h-100 border-white pa-tres">
+                <img src="<%= news[12].image_url %>" class="card-img-top img-card  pa-tres" alt="..." height="180px">
+                <div class="card-body pr-vinte">
+                  <h5 class="card-title ">
+                    <%= news[12].title %>
+                  </h5>
+                </div>
+                <div class="card-footer destaque">
+                  <small class="txt-white"> <%  timeRead = Math.ceil(news[12].body.split(' ').length / 150)  %> 
+                    Tempo de Leitura: <%=timeRead %> min </small>
+            </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="container mt-2 mb-2">
+          <a href="https://go.hotmart.com/E53105110N"><img src="https://i.ibb.co/Dwp22KZ/propaganda1.jpg"
+              class="card-img" alt="..." height="90px"></a>
+        </div>
+    
+      <script>
+     
+      </script>    
+    </body>
+
+   
+
+    <%- include ('partials/footer.ejs') %>

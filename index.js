@@ -7,7 +7,7 @@ const New = require("./news/New")
 const User = require("./user/User")
 const Sequelize = require("sequelize")
 const adminAuth = require("./middlewares/adminAuth")
-const { authSecret } = require("./database/.db")
+const { authSecret } = require("./database/.env")
 
 
 const categoriesController = require("./categories/CategoriesController")

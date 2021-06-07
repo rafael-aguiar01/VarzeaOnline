@@ -15,7 +15,7 @@
 <div class="container">
     <hr>
     <h2>Noticias</h2>
-    <a class="btn btn-success" href="/admin/news/create">Criar Notícia</a>
+    <a class="btn btn-success" href="/noticias/incluir">Criar Notícia</a>
     <hr>
     
     <table class="table table-bordered">
@@ -37,14 +37,12 @@
                 <td><%= news.views %> </td>
                 <td><%= news.category.title %></td>
                 <td>
-                    <a href="/admin/news/edit/<%= news.id  %> " class="btn btn-warning">Editar</a>
-                    <form method="POST" action="/news/delete" style="display: inline;" 
+                    <a href="/noticias/editar/<%= news.id  %> " class="btn btn-warning">Editar</a>
+                    <form method="POST" action="/noticias/deletar/<%= news.id%> " style="display: inline;" 
                     onsubmit="confirmDelete(event, this)">
                         <input type="hidden" name="id" value="<%= news.id%>">
                         <button class="btn btn-danger">Deletar</button>
                     </form>
-                   
-
                 </td>
             </tr>
             <% })  %> 

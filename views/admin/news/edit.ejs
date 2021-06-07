@@ -21,18 +21,18 @@
         </div>
         <div class="card-body">
             
-            <form method="POST" action="/news/update">
-                <input type="hidden" value="<%= noticia.id %>" name="id">
-                <input class="form-control" type="text" name="title" placeholder="Título da Notícia" value="<%- noticia.title %>">
-                <input class="form-control mt-2 mb-2" type="text" name="caption" placeholder="Sub-título da notícia" value="<%- noticia.caption %>">
+            <form method="POST" action="/noticias/atualizar">
+                <input type="hidden" value="<%= article.id %>" name="id">
+                <input class="form-control" type="text" name="title" placeholder="Título da Notícia" value="<%- article.title %>">
+                <input class="form-control mt-2 mb-2" type="text" name="caption" placeholder="Sub-título da notícia" value="<%- article.caption %>">
                 <textarea class="form-control" placeholder="Escreva a notícia aqui" name="body" id="noticia" ></textarea>
-                <input class="form-control mt-2" type="text" name="image_url" placeholder="Url Imagem da notícia" value="<%- noticia.image_url %>">
-                <input class="form-control mt-2" type="text" name="author" placeholder="Autor" value="<%- noticia.author %>">
-                <input class="form-control mt-2" type="text" name="views" placeholder="Views" value="<%- noticia.views %>">
+                <input class="form-control mt-2" type="text" name="image_url" placeholder="Url Imagem da notícia" value="<%- article.image_url %>">
+                <input class="form-control mt-2" type="text" name="author" placeholder="Autor" value="<%- article.author %>">
+                <input class="form-control mt-2" type="text" name="views" placeholder="Views" value="<%- article.views %>">
                 <label class="mt-2">Categoria</label>
                 <select name="category" class="form-control">
                     <% categories.forEach((category) => { %>
-                        <% if(category.id === noticia.categoryId) { %> 
+                        <% if(category.id === article.categoryId) { %> 
                             <option value="<%= category.id %>" selected><%= category.title %></option>
                         <% } else { %> 
                             <option value="<%= category.id %>"><%= category.title %></option>
@@ -40,13 +40,13 @@
                     <% }) %> 
                 </select>
                 <button class = "btn btn-success mt-2">Atualizar</button>
-                <button href="/admin/news" class = "btn btn-danger mt-2">Cancelar</button>
+                <button href="/admin/noticias" class = "btn btn-danger mt-2">Cancelar</button>
             </form>
         </div>
     </div>
 </div>
 <div id="content" style="display: none;">
-    <%- noticia.body %>
+    <%- article.body %>
 </div>
 
 <%- include ('../../partials/footer.ejs') %>

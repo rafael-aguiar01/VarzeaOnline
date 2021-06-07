@@ -15,7 +15,7 @@
 <div class="container">
     <hr>
     <h2>Usuários</h2>
-    <a class="btn btn-success text-white" href="/admin/users/create">Criar Usuário</a>
+    <a class="btn btn-success text-white" href="/admin/usuarios/incluir">Criar Usuário</a>
     <hr>
     
     <table class="table table-bordered">
@@ -33,8 +33,8 @@
                 <td><%= users.id %> </td>
                 <td><%= users.email %> </td>
                 <td>
-                    <a href="/admin/users/edit/<%= users.id  %> " class="btn btn-warning">Editar</a>
-                    <form method="POST" action="/news/delete" style="display: inline;" 
+                    <a href="/usuarios/editar/<%= users.id  %> " class="btn btn-warning">Editar</a>
+                    <form method="POST" action="/usuarios/deletar/<%= users.id  %> " style="display: inline;" 
                     onsubmit="confirmDelete(event, this)">
                         <input type="hidden" name="id" value="<%= users.id%>">
                         <button class="btn btn-danger">Deletar</button>

@@ -15,7 +15,7 @@
 <div class="container">
     <hr>
     <h2>Categorias</h2>
-    <a class="btn btn-success" href="/admin/categories/new">Criar Categoria</a>
+    <a class="btn btn-success" href="/categoria/incluir">Criar Categoria</a>
     <hr>
 
     <table class="table table-bordered">
@@ -34,8 +34,8 @@
                     <th><%= category.title %> </th>
                     <th><%= category.slug %> </th>
                     <td>
-                        <a href="/category/edit/:<%= category.id  %> " class="btn btn-warning">Editar</a>
-                        <form method="POST" action="/category/delete" style="display: inline;" 
+                        <a href="/editoral/editar/<%= category.id  %> " class="btn btn-warning">Editar</a>
+                        <form method="POST" action="/editoral/deletar/<%= category.id %>" style="display: inline;" 
                         onsubmit="confirmDelete(event, this)">
                             <input type="hidden" name="id" value="<%= category.id%>">
                             <button class="btn btn-danger">Deletar</button>

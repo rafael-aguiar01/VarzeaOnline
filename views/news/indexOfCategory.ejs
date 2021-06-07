@@ -27,7 +27,8 @@
         <div class="card-body">
           <h5 class="card-title"><%= noticia.title %> </h5>
           <p class="card-text"><%= noticia.caption %> </p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <p class="card-text"><small class="txt-black"> <%  timeRead = Math.ceil(noticia.body.split(' ').length / 150)  %> 
+            Tempo de Leitura: <%=timeRead %> min </small></p>
         </div>
       </div>
     </div>

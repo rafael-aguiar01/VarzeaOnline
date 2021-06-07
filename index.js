@@ -7,7 +7,7 @@ const connection = require("./database/database")
 // const User = require("./user/User")
 // const Sequelize = require("sequelize")
 // const adminAuth = require("./middlewares/adminAuth")
-const { authSecret } = require("./database/.env")
+const { authSecret } = require("./.env")
 
 const router = require("./routes/routes")
 

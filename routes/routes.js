@@ -41,6 +41,4 @@ router.post('/usuarios/atualizar', adminAuth, UserController.updateUser)
 router.post('/usuarios/deletar/:id', adminAuth, UserController.delUser)
 
 
-
-
 module.exports = router;

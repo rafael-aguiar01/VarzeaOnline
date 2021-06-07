@@ -125,6 +125,7 @@ router.get("/category/:slug/:num", (req,res)=>{
     }else {
         offset = (parseInt(page) -1) * 10
     }
+    
     Category.findOne({
         where:{
             slug: slug

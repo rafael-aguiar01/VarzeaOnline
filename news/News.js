@@ -62,12 +62,47 @@ class News {
                     id:{[Op.notLike]: articleId},
                 },
                 order: [
-                    ['id', 'DESC']
+                    [['id', 'DESC']]
                 ],
                 limit: 4               
             })
             return result
             
+        } catch (err) {
+            console.log(err)
+            return[]
+        }
+    }
+    async findByCategoryIndex(categoryId){
+        try {
+            let result = await New.findAll({
+                where:{
+                    categoryId: categoryId
+                },
+                limit: 10,
+                order: [
+                    [['id', 'DESC']]
+                ],
+            })
+            return result
+        } catch (err) {
+            console.log(err)
+            return[]
+        }
+    }
+    async findByCategoryPage(categoryId, offset){
+        try {
+            let result = await New.findAndCountAll({
+                where:{
+                    categoryId: categoryId
+                },
+                limit: 10,
+                offset: offset,
+                order: [
+                    [['id', 'DESC']]
+                ],
+            })
+            return result
         } catch (err) {
             console.log(err)
             return[]

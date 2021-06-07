@@ -38,13 +38,13 @@
     <div class="col col-12">
       
         <% if(result.page >2 ){  %> 
-            <a style="float: left" href="/category/<%= slug %> /<%= result.page -1 %> "> <<< Voltar</a>
+            <a style="float: left" href="/editoriais/<%= slug %> /<%= result.page -1 %> "> <<< Voltar</a>
         <%} else if(result.page ==2){ %> 
-            <a style="float: left" href="/category/<%= slug %> "> <<< Voltar</a>
+            <a style="float: left" href="/editoriais/<%= slug %> "> <<< Voltar</a>
         <% } %> 
         
         <% if(result.next) {%> 
-            <a style="float: right" href="/articles/page/<%= result.page +1 %>">Avançar >>></a>
+            <a style="float: right" href="/editoriais/<%= slug %>/<%= result.page +1 %>">Avançar >>></a>
         <% } %> 
     </div>
     

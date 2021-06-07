@@ -15,11 +15,9 @@ class Category {
     async findBySlug(slug){
         try {
             let result = await Categories.findOne({
-                limit: 10,
                 where: {
                     slug: slug
                 },
-                include: [{model: New}]
             })
             return result
         } catch (err) {

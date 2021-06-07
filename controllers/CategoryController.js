@@ -4,9 +4,10 @@ const News = require("../news/News")
 class CategoryController {
     async index(req,res){
         let slug = req.params.slug
-        let news = await Category.findBySlug(slug)
+        let category = await Category.findBySlug(slug)
+        let news = await News.findByCategoryIndex(category.id)
         let categories = await Category.findAll()
-        res.render("news/index",{news: news.news, categories: categories, slug:slug})
+        res.render("news/index",{news: news, categories: categories, slug:slug})
     }
     async pages(req,res){
         let slug = req.params.slug
@@ -18,10 +19,12 @@ class CategoryController {
         }else {
             offset = (parseInt(page) -1) * 10
         }
+
         let category = await Category.findBySlug(slug)
-        let articleId = 0
-        let news = await News.findByCategoryId(category.id, articleId)
+
+        let news = await News.findByCategoryPage(category.id, offset)
         let next
+
         if (offset + 10 >= news.count) {
             next = false
         } else {
@@ -32,7 +35,6 @@ class CategoryController {
             next: next,
             news: news
         }
-        // res.send(result.news)
         let categories = await Category.findAll()
         res.render("news/indexOfCategory", {result: result, categories: categories, slug:slug})
     }

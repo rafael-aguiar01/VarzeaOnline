@@ -2,6 +2,7 @@ const Category = require("../categories/Categories")
 const News = require("../news/News")
 
 class HomeController {
+    
     async index(req,res){
         let categories = await Category.findAll()
         let news = await News.findHome()
@@ -12,6 +13,6 @@ class HomeController {
         res.render("admin/index")
     }
 }
-
+console.log("oi")
 module.exports = new HomeController()
 

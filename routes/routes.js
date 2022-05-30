@@ -8,7 +8,7 @@ const UserController = require("../controllers/UserController")
 const adminAuth = require("../middlewares/adminAuth")
 
 
-router.get('/', HomeController.index);
+router.get('/', HomeController.index)
 router.get("/login", UserController.login)
 router.post("/authenticate", UserController.authenticate)
 router.get('/admin', adminAuth, HomeController.admin)

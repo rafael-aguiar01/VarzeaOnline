@@ -34,7 +34,6 @@ class UserController{
     }
     async login(req,res){
         res.render("admin/users/login")
-        res.send("oi")
     }
     async authenticate(req,res){
         let {email, password} = req.body

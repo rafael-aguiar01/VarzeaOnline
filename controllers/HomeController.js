@@ -13,6 +13,5 @@ class HomeController {
         res.render("admin/index")
     }
 }
-console.log("oi")
 module.exports = new HomeController()
 

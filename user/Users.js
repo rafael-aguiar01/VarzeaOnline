@@ -39,7 +39,8 @@ class Users {
         try {
             await User.create({
                 email: email,
-                password: hash
+                password: password,
+                password: hash,
             })
         } catch (err) {
             console.log(err)
